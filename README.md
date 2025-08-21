@@ -4,7 +4,7 @@
 
 
 
-## Primary author & maintainer:
+## Primary Author & Maintainer:
 1. [Thanh (Randy) Bui](https://github.com/thanh8ui)
 
 ## Problem Description:
