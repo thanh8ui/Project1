@@ -1,31 +1,24 @@
 
-# Team 6 Mist 4610 Group Project 1
+# Relational Database for Bakery
 
 
 
 
-## Team Name: 
-47114 Group 6
-
-
-## Team Members:
+## Primary author & maintainer:
 1. [Thanh (Randy) Bui](https://github.com/thanh8ui)
-2. [Luke Eckert](https://github.com/Luke-Eckert) 
-3. [Claire Lee](https://github.com/clairerlee)
-4. [Elyse Robbins](https://github.com/elyserobbins)
-5. [Elliot Wallace](https://github.com/e8w-9837)
+
 ## Problem Description:
 The task at hand is to model and build a relational database for the general workings of a bakery business. The central entity in the model is the Bakery entity, representing each physical bakery location that the company owns and operates in various areas. The bakery operates in conjunction with the products it sells, the ingredients it sources, the suppliers it works with, and the customers who purchase from them, whether in-store or via special orders.
 
-We are interested in accurately modeling these relationships, generating sample data, and populating the entities and their attributes with this sample data. Furthermore, we are interested in performing functioning queries on this data to provide valuable business insights about the bakery’s operations, such as tracking best-selling products, monitoring ingredient inventory, evaluating supplier reliability, and analyzing customer purchasing trends.
+I am interested in accurately modeling these relationships, generating sample data, and populating the entities and their attributes with this sample data. Furthermore, performing functioning queries on this data would provide valuable business insights about the bakery’s operations, such as tracking best-selling products, monitoring ingredient inventory, evaluating supplier reliability, and analyzing customer purchasing trends.
 
 ## Data Model: 
-Our Data model is a bakery, named Primary Key Pastries. We have mapped out the data model to accurately model the data needed for this bakery business, using essential entities and their relationships with one another to correctly support different facets of the business such as staffing, inventory, and payments
-First off, the supplier entity represents the different vendors from which our bakery gets its raw materials. Within this entity, we have the primary key (supplierID), as well as the name of supplier, their contact info, and information about the product that they provide. Suppliers can provide multiple ingredients. Each ingredient is identified by a unique IngredientsID and has a name, a reference to its supplier (foreign key), a quantity, a cost per unit, and an expiration date.
+The data model is a bakery named Primary Key Pastries. I have mapped out the data model to accurately model the data needed for this bakery business, using essential entities and their relationships with one another to correctly support different facets of the business such as staffing, inventory, and payments
+First off, the supplier entity represents the different vendors from which our bakery gets its raw materials. Within this entity, I have the primary key (supplierID), as well as the name of supplier, their contact info, and information about the product that they provide. Suppliers can provide multiple ingredients. Each ingredient is identified by a unique IngredientsID and has a name, a reference to its supplier (foreign key), a quantity, a cost per unit, and an expiration date.
 
 Ingredients and Products have a many to many relationship - connected by a table named “Products_Ingredients”. The Products entity contains all items that are available for sale in the bakery, which includes attributes such as the Name, Category, Price, and Availability of the product. In the Product_Ingredients entity there are two foreign keys pulled from Products (ProductID) and Ingredients (IngredientID), as well as the attribute Quantity required for making each product. 
 
-The Customers table maintains records of customer details such as names, contact information, and loyalty program status. Customers place Orders, forming a one-to-many relationship where a customer can have multiple orders. The Orders entity contains order-specific details such as order date, total cost, and order status. Since each order consists of multiple products, we introduce the Order_Items table, which links Orders to Products in a many-to-many relationship. This table tracks the quantity of each product in an order and its subtotal.
+The Customers table maintains records of customer details such as names, contact information, and loyalty program status. Customers place Orders, forming a one-to-many relationship where a customer can have multiple orders. The Orders entity contains order-specific details such as order date, total cost, and order status. Since each order consists of multiple products, I introduced the Order_Items table, which links Orders to Products in a many-to-many relationship. This table tracks the quantity of each product in an order and its subtotal.
 
 The Products entity also has a many to many relationship with the Orders entity, connected by the associative entity Order_Items. Within the Order_Items table, there is its own primary key (OrderItemID), as well as two forging keys that are pulled from the Orders entity and the Products entity. Regarding the attributes in the Order_Items table, there is the quantity of the items in the order, as well as the subtotal of the order. Regarding the Orders entity, it has its own primary key (OrderID), as well as a foreign key from the Customers table. Regarding its own attributes not related to other tables, the OrderDate, OrderStatus, and TotalCost of the order is also tracked within the Orders table. Related to the Orders entity is the Customers entity, as one customer can have many orders. Within the Customers entity, there is a primary key (CustomerID), as well as the name of the customer, contact information, and the customer's status within the bakery’s loyalty program.
     
@@ -112,6 +105,3 @@ By using this query, managers can make informed decisions about supplier perform
 10. Query #10 identifies the most ordered product and the total quantity sold, helping bakery managers understand which product drives the highest demand. This insight informs inventory planning, marketing strategies, and potential pricing adjustments to boost profitability and customer satisfaction.
 ![App Screenshot](https://snipboard.io/oIY4uZ.jpg)
 By leveraging this data, managers can optimize stock levels for the most popular items, plan targeted promotions, and adjust pricing to maximize sales and ensure consistent product availability.
-## Database Information: 
-### Name of the database: 
-al_Group_47114_G6
